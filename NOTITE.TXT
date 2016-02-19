@@ -1,0 +1,4 @@
+Add write permission for folder "theme/default/template_c"
+Config in file:
+	- includes/setup.php
+	- includes/dbDetails.php

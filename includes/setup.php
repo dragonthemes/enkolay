@@ -17,7 +17,7 @@ Note:			Dont Change this file for any reason, we keep some security key for safe
 
     /*if($_SERVER['HTTP_HOST'] == '72.10.32.146' || $_SERVER['HTTP_HOST'] == 'http://enkolayweb.com' || $_SERVER['HTTP_HOST'] == 'http://www.enkolayweb.com' || $_SERVER['HTTP_HOST'] == 'enkolayweb.com' || $_SERVER['HTTP_HOST'] == 'www.enkolayweb.com'){ */
    
-        if($_SERVER['SERVER_ADDR'] == '31.210.53.104'){   //72.10.32.146
+        if($_SERVER['SERVER_ADDR'] == '127.0.0.1'){   //72.10.32.146
     	
     	require_once('dbDetails.php');
     	

@@ -1,0 +1,127 @@
+.themewrapper4Cont{
+	background:#e14f3f;
+}
+.blogthemeNavTab{
+	background: #5e575f;
+	background-image:-moz-linear-gradient(top,#320000,#5e575f);
+	background-image:-webkit-gradient(linear,0 0,0 100%,from(#320000),to(#5e575f));
+	background-image:-webkit-linear-gradient(top,#320000,#5e575f);
+	background-image:-o-linear-gradient(top,#320000,#5e575f);
+	background-image:linear-gradient(to bottom,#320000,#5e575f);
+	background-repeat:repeat-x;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#320000', endColorstr='#5e575f', GradientType=0);
+}
+.themewrapper1,.blogPageBgInnerMiddle {
+	margin:0 auto;
+	width:960px;
+}
+ul#sortable{
+	margin:0px;
+}
+.fireworkImg{
+	background:url(../../../photo_blog/blog4/blogtheme1.jpg) no-repeat 50% top;
+	height:342px;
+	width:100%;
+}
+.blogthemeNavTab ul{
+	margin:0px;
+}
+.blogthemeNavTab ul li{
+	display:inline-block;
+}
+.blogthemeNavTab ul li a{
+	display:inline-block;
+	color:#ffffff;
+	padding:10px 20px;
+}
+.blogPageBgInnerTab4{
+	padding:0px 0px 15px 0px;
+}
+.blogPageBgInnerTab4 a{
+	float:right;
+	padding:10px 15px;
+	color:#127e80;
+}
+.blogPageBgInnerTab4 a.active{
+	background:#127e80;
+	color:#ffffff;
+	float:left;
+}
+#postblog{
+	background:#127e80;
+	padding:10px;
+	clear:both;
+}
+.bogPost3InnerDate{
+    padding-bottom: 5px;
+    width: 100%;
+	float:left;
+}
+.bogPost3InnerDate div{
+	float:right;
+	font-size:12px;
+	color:#dddddd;
+}
+.bogPost3InnerCommentTitle{
+	color: #ffffff;
+    display: block;
+    font-family: opensans;
+    font-size: 13px;
+    padding-bottom: 5px;
+}
+.bogPost3InnerCommentTxt{
+	color:#b6a748;
+	padding-bottom:5px;
+	display:block;
+}
+.blogTableHide{display:none;}
+.seperator{
+	clear:both;
+	border-bottom:1px solid #dddddd;
+}
+.seperator:last-child{
+	border-bottom:0px solid #dddddd;
+}
+.popaddTitle{
+	padding:15px;
+}
+.modalPopManageComment {
+	width: 800px!important;
+	margin-left: -400px!important;
+}
+.mainRightPanelInner .modal {
+	border: 5px solid #127E80;
+	border-radius: 3px;
+}
+#modals .popaddTitleHead {
+	font-size: 15px;
+	font-family: RobotoCondensedRegular;
+	text-transform: uppercase;
+	border-bottom: 1px solid #DDDDDD;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+}
+.widtTenPer {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	width: 100%;
+}
+.popaddTitleHeadBg{
+	background:#127E80;
+	color:#ffffff;
+	line-height:40px;
+	padding:0px 10px;
+}
+#cat_id,#author_id,#archives_id{
+	padding:5px;
+	border:1px solid #127E80;
+	border-top:0px solid #127E80;
+}
+.popaddTitleHeadCatAll{
+	padding:5px;
+}
+.authorTxtBg a{
+	text-decoration:none;
+	cursor:pointer;
+}

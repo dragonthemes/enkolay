@@ -1,0 +1,57 @@
+#jquery-colour-picker {
+	background-color:#333333;background-image:-moz-linear-gradient(top,#333333,#999999);background-image:-webkit-gradient(linear,0 0,0 100%,from(#333333),to(#999999));background-image:-webkit-linear-gradient(top,#333333,#999999);background-image:-o-linear-gradient(top,#333333,#999999);background-image:linear-gradient(to bottom,#333333,#999999);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#999999', GradientType=0);
+	width: 180px;
+	padding:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	z-index: 99;
+}
+
+	#jquery-colour-picker h2 {
+		margin: 0 0 5px 0;
+		font-size: 13px;
+		color:#fff;
+	}
+
+	#jquery-colour-picker ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		+zoom: 1;
+	}
+
+	#jquery-colour-picker ul:after {
+		content: ".";
+		display: block;
+		height: 0;
+		visibility: hidden;
+		clear: both;
+	}
+
+		#jquery-colour-picker ul li {
+			float: left;
+			margin: 0 5px 5px 0;
+		}
+
+			#jquery-colour-picker ul li a {
+				display: block;
+
+				width: 13px;
+				height: 13px;
+
+				text-decoration: none;
+				text-indent: -100000px;
+				outline: 0;
+
+				border: 1px solid #aaa;
+			}
+
+			#jquery-colour-picker ul li a:hover {
+				border-color: #000;
+			}
+			
+			.coloricon{ float:left; position:absolute; left:0; top:-31px; font:14px opensans !important; padding:4px 12px; opacity:1; width:19px; height:19px; z-index:10000;}
+			#jquery-colour-picker-example input{ display:none; margin:0;}
+			#jquery-colour-picker{z-index:11900;}
+			#toolbar .dropdown-menu{ min-width:68px!important;}

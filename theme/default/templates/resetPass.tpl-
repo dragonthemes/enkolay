@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="forgotHead">{if $smarty.get.forgot eq ''}
+			{$LANG.password_reset}
+		{else}
+			 {$LANG.password_forgot}
+		{/if}
+    </div>
+	<div class="resetContainer">
+		<form name="resetform" id="resetform" class="no-mar" method="post" onsubmit="return resetVal();">
+			<input type="hidden" name="user_id" id="user_id" value="{if $smarty.session.reset_user_id}{$smarty.session.reset_user_id}{else}{$smarty.session.user_id}{/if}">
+			<input type="hidden" name="forgot" id="forgot" value="{$smarty.get.forgot}">
+			<div class="dc">
+				<div class="resetpasswordImg"></div>
+			</div>
+			<div class="clr"></div>
+			{if $smarty.get.forgot eq ''}
+			<div class="cont">{$LANG.password_to_reclaim}</div>
+			{else}
+			<div class="cont">{$LANG.password_email_belw}</div>
+			{/if}	
+			<div class="resetInner form">
+				<label>{$LANG.password_email}</label>
+				<div id="errormsg"></div>
+				<input type="text" name="reset_email" id="reset_email" value="">
+				<div class="clr"></div>
+				<input type="submit" class="submitButton" name="reset" id="reset" value="Reset">
+				<input  type="button" name="cancel" class="cancelButton" id="cancel" value="Cancel" onclick="return changePage();">
+			</div>
+		</form>
+	</div>
+</div>

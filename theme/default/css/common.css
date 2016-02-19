@@ -1,0 +1,624 @@
+.indexRightScroll {
+    background: #242424;
+    border-radius: 5px;
+    color: #FFFFFF;
+    list-style: none;
+    margin: -73px 0 0;
+    padding: 0 5px 5px;
+    position: fixed;
+    right: 53px;
+    top: 50%;
+    z-index: 1000;
+}
+.indexCommingSoon{
+	color: #333333;
+    font: 60px opensansbold;
+    padding: 130px 0 0;
+    text-align: center;
+}
+.indexRightScroll li {
+    padding: 0;
+    text-align: center;
+}
+.indexRightScroll li a {
+    display: block;
+    height: 4px;
+    padding: 10px 7px;
+    width: 4px;
+}
+.indexRightScroll a {
+    height: 10px;
+}
+.indexRightScroll li a:before {
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    content: "";
+    height: 4px;
+    position: absolute;
+    width: 4px;
+	left:9px;
+}
+.indexRightScroll li a.active:before {
+    background: none;
+    border: 1px solid #000000;
+    height: 10px;
+    left: 8px;
+    margin-top: -4px;
+    width: 10px;
+}
+.indexRightScroll a:before {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: #ffffff;
+    left: 50%;
+    margin-left: 2px;
+}
+.indexRightScroll li a:before {
+    background-color: rgba(0, 0, 0, 0.16);
+    border: medium none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+    height: 9px;
+    margin-top: 2px;
+    width: 9px;
+}
+.indexRightScroll li a.active:before {
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+    height: 13px;
+    margin: 0 0 0 -1px;
+    width: 13px;
+}
+
+.indexRightScroll .indextooltip {
+    display: none;
+    margin: -24px 30px;
+    min-width: 93px;
+    position: absolute;
+    right: -5px;
+    text-transform: uppercase;
+}
+caption, th, td {
+    font-weight: normal;
+    text-align: left;
+    vertical-align: middle;
+}
+.indexRightScroll .indextooltip .indextooltipLft {
+    background:url(../../../images/image-left.png) no-repeat left top;
+    height: 29px;
+    width: 9px;
+}
+.indexRightScroll .indextooltip .indextooltipMid {
+    background:url(../../../images/image-middle.png) repeat-x left top;
+    height: 29px;
+	padding:0 5px;
+}
+.indexRightScroll .indextooltip .indextooltipRht {
+    background:url(../../../images/image-right.png) no-repeat right top;
+    height: 29px;
+	width:18px;
+}
+.indexRightScroll li:hover .indextooltip{
+	display: block;
+}
+.indexBanner{
+	background:url(../../../images/bg.jpg) repeat center top;
+	width:100%;
+	background-size:cover;
+	height:693px;
+}
+.indexBanner .indexBannerHead .Indexnav{
+	margin:0;
+	display:block;
+	width:100%;
+}
+.indexBanner .indexBannerHead .Indexnav li{
+	list-style:none;
+	float:left;
+}
+.indexBanner .indexBannerHead .Indexnav li.sitelogo a{
+	float:left;
+}
+.indexBanner .indexBannerHead .Indexnav li.login{
+	float:right;
+	margin-top:25px;
+}
+.indexBanner .indexBannerHead .Indexnav li.login a{
+	padding:7px 11px;
+	border:2px solid #ffffff;
+	border-radius:3px;
+	color:#ffffff;
+	float:left;
+	font:15px Century Gothic;
+	text-decoration:none;
+	margin-right:30px;
+}
+.indexBanner .indexBannerHead .Indexnav li.menu{
+	float:right;
+	position:relative;
+	z-index:1000;
+	margin-top:35px;
+}
+.indexBanner .indexBannerHead .Indexnav li.menu a{
+	float:left;
+	font:15px Century Gothic;
+	color:#ffffff;
+	text-decoration:none;
+	position:relative;
+}
+.indexBannerDiv{ float:right; margin:7px 0 0;}
+.indexBannerDiv .indexBannerHead .Indexnav{
+	margin:0;
+	display:block;
+	width:auto;
+	padding:0;
+}
+.indexBannerDiv .indexBannerHead .Indexnav li{
+	list-style:none;
+	float:left;
+}
+.indexBannerDiv .indexBannerHead .Indexnav li.sitelogo a{
+	float:left;
+}
+.indexBannerDiv .indexBannerHead .Indexnav li.login{
+	float:right;
+	margin-top:25px;
+}
+.indexBannerDiv .indexBannerHead .Indexnav li.login a{
+	padding:7px 11px;
+	border:2px solid #ffffff;
+	border-radius:3px;
+	color:#ffffff;
+	float:left;
+	font:15px Century Gothic;
+	text-decoration:none;
+	margin-right:30px;
+}
+.indexBannerDiv .indexBannerHead .Indexnav li.menu{
+	float:right;
+	position:relative;
+	z-index:1000;
+}
+.indexBannerDiv .indexBannerHead .Indexnav li.menu a{
+	float:left;
+	font:15px Century Gothic;
+	color:#ffffff;
+	text-decoration:none;
+	position:relative;
+}
+.indexBannerCont{
+	padding-top:200px;
+	color:#ffffff;
+	font-family: Century Gothic;
+	clear:both;
+	text-align:center;
+}
+.indexBannerCont .indexBannerContTop{
+	font-size:44px;
+}
+.indexBannerCont .indexBannerContBott{
+	font-size:16px;
+	margin:32px 0 0 0;
+}
+.indexBannerCont .indexBannerContButton{
+	font-size:16px;
+	background:#b21515;
+	padding:14px 52px;
+	display:inline-block;
+	margin-top:32px;
+	border-radius:10px;
+	cursor:pointer;
+	color:#ffffff;
+	text-decoration:none;
+}
+.indexBannerCont .indexBannerContBott li{
+	display:inline-block;
+	padding-right:15px;
+	list-style:none;
+}
+.indexBannerCont .indexBannerContBott li img{
+	margin:0 5px 0 0;
+	vertical-align:middle;
+}
+.indexSiteCrator{
+	background:#ffffff;
+}
+.indexModernTheme{
+	background:url(../../../images/powerful-creator-bg.png) no-repeat center top;
+	width:100%;
+	background-size:cover;
+}
+.indexSiteCrator .indexSiteCratorHead{
+	text-align:center;
+	font:33px Century Gothic;
+	color:#3c3b3b;
+	padding:35px 0 0 0 ;
+}
+.indexSiteCrator .indexSiteCratorInbuild {
+    color: #3C3B3B;
+    font: 15px Century Gothic;
+    padding: 10px 0 35px 0;
+    text-align: center;
+}
+.indexSiteCrator .indexSiteCreateLft{
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	margin-top:0;
+	background:#ffffff;
+	float:left;
+	width:100%;
+}
+.indexSiteCrator .indexSiteCreateLft .indexSiteCreateLftInn a{
+	text-align:center;
+	text-decoration:none;
+	border:none;
+	color:#3c3b3b;
+	font-family:opensans;
+	font-size:16px;
+	height: 127px;
+	padding:15px 0;
+	float:left;
+}
+.indexSiteCrator .indexSiteCreateLft .indexSiteCreateLftInn a img{
+}
+.indexSiteCrator .indexSiteCreateLft .indexSiteCreateLftInn a h3{
+	text-transform:uppercase;
+}
+.indexSiteCrator .indexSiteCreateRht{
+}
+.siteBuildButton{
+	background:#4c4b4b;
+	color:#ffffff;
+	font:20px opensanslight;
+	padding:10px 44px;
+	text-decoration:none;
+	border-radius:5px;
+	cursor:default;
+}
+.siteBuildButton:hover{text-decoration:none; color:#ffffff;}
+.marTop30{margin-top:30px;}
+.indexFooter{
+	background:#c65252 url(../../../images/footer-bg.png) no-repeat center top;
+	background-size:cover;
+	width:100%;
+}
+.indexFooter .indexFooterHead{
+	text-align:center;
+	font:33px Century Gothic;
+	color:#ffffff;
+	padding:28px 0 37px;
+}
+.indexFooter .indexFooterPara{
+	text-align:center;
+	font:16px Century Gothic;
+	color:#ffffff;
+	padding-bottom:25px;
+}
+.indexFooterSocial{
+	text-align:center;
+	display: inline-block;
+	margin-bottom:48px;
+}
+.indexFooterInn{text-align:center;}
+.indexFooterLeft .indexFooterLeftUser{
+	background: url(../../../images/Feedimg.png) no-repeat left top;
+	width:112px;
+	height:112px;
+	float:left;
+	margin-top: 65px;
+}
+.indexFooterLeft .indexFooterDesc{
+	float: left;
+    width: 330px
+}
+.indexFooterLeft .indexFooterSpace{
+	float: left;
+    height: 220px;
+    width: 45px;
+}
+.indexFooterLeft .indexFooterDesc .indexFooterDescQuote{
+	background: url(../../../images/testimonial-image.png) no-repeat left top;
+	width:100%;
+	height:61px;
+	float:left;
+	padding-bottom:20px;
+}
+.indexFooterLeft .indexFooterDesc .indexFooterDescPara{
+	font-size:18px;
+	font-family: Century Gothic;
+	line-height:24px;
+	float:left;
+	width:100%;
+	color:#ffffff;
+}
+.indexFooterLeft .indexFooterDesc .indexFooterDescDate{
+	font-size:14px;
+	font-family: Century Gothic;
+	line-height:24px;
+	font-weight:bold;
+	font-style:italic;
+	float:left;
+	width:100%;
+	color:#ffffff;
+}
+.indexFooterLeft .indexFooterDesc .indexFooterDescDate b{
+	color:#f7ab33;
+}
+.inndexFooterSignUp{
+	background:#fcfcfc;
+	padding:28px;
+	width:268px;
+}
+.indexFooterSignupInn{
+}
+.indexFooterSignupInn .indexFooterSignupInnLable{
+	border:1px solid #dddddd;
+	border-radius:0;
+	padding:15px 18px;
+	box-shadow:none;
+	background:none;
+	font-family:Century Gothic;
+	color:#666666;
+	font-size:15px;
+	width:100%;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+.indexFooterSignupInn .indexFooterSignupInnLable:focus{
+	box-shadow:none;
+	color:#333333;
+}
+.indexFooterSignupInn .indexFooterSignupInnButton{
+	background:#fbc33d;
+	padding:14px 0;
+	font-family:Century Gothic;
+	border:none;
+	color:#333333;
+	font-size:18px;
+	display:block;
+	border-radius:6px;
+	width:100%;
+}
+.indexFooterStaticPage{
+	padding:57px 0 26px;
+	color:#ffffff;
+	font-family:Century Gothic;
+	font-size:12px;
+	text-align:center;
+}
+.indexFooterStaticPage a{
+	text-decoration:none;
+	color:#ffffff;
+}
+.loginPopButton{
+	background-color:#8D0000;
+	background-image:-moz-linear-gradient(top,#B21515,#8D0000);
+	background-image:-webkit-gradient(linear,0 0,0 100%,from(#B21515),to(#8D0000));
+	background-image:-webkit-linear-gradient(top,#B21515,#8D0000);
+	background-image:-o-linear-gradient(top,#B21515,#8D0000);
+	background-image:linear-gradient(to bottom,#B21515,#8D0000);
+	background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#B21515', endColorstr='#8D0000', GradientType=0);
+	border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    float: right;
+    font-family: opensans;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: -28px;
+    padding: 13px 30px;
+    text-transform: uppercase;
+}
+.loginPop .remember{display:block;}
+.indexFooterLeft {
+    position: relative;
+}
+.indexFooterLeftSlide {
+    position: absolute;
+}
+ul.Indexnav li ul.menuList {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 40px;
+	width:600px;
+	padding:15px;
+}
+ul.Indexnav li ul.menuList li{
+    line-height: 36px;
+    list-style: none;
+	text-align:center;
+}
+
+.menuList .arrow, .menuList .arrow:after {
+    border-color: rgba(0, 0, 0, 0);
+    border-style: solid;
+    display: block;
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+.menuList .arrow {
+    border-bottom-color: #ffffff;
+    border-top-width: 0;
+    right: 30px;
+    margin-left: -11px;
+    top: -11px;
+}
+.menuList .arrow {
+    border-width: 11px;
+}
+.menuListIcon a:hover{background:#ffffff!important;}
+.menuListIconListMar{margin-left:10px;}
+.indexsocialConnect{
+    margin: 0 !important;
+    width: 100%
+}
+.indexsocialConnect ul{
+	float: right;
+    margin: 0;
+}
+.indexsocialConnect ul li{
+	margin: 0 5px 0 0 !important;
+}
+.indexsocialConnect ul li a{
+	border: medium none;
+    cursor: pointer;
+    padding: 0 !important;
+    text-decoration: none;
+}
+.indexsocialConnect ul li a:hover{
+	background:none!important;
+}
+.socilConnectTxt {
+    font: bold 18px/40px 'Century Gothic';
+    padding-right: 10px;
+}
+.indexSiteCrator .indexSiteCreateLft .slides-nav li a {
+    border: medium none;
+    color: #3C3B3B;
+    float: left;
+    font-family: Century Gothic;
+    font-size: 16px;
+    height: 150px;
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+	text-transform:capitalize;
+}
+
+.indexSiteCrator .indexSiteCreateLft .slides-nav li a.one {
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+    border-bottom: 2px solid #E6E6E6;
+    border-right: 2px solid #E6E6E6;
+    float: left;
+    width: 50%;
+}
+.indexSiteCrator .indexSiteCreateLft .slides-nav li a.two {
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+    border-bottom: 2px solid #E6E6E6;
+    float: left;
+    width: 50%;
+}
+.indexSiteCrator .indexSiteCreateLft .slides-nav li a.three {
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+    border-bottom: 2px solid #E6E6E6;
+    border-right: 2px solid #E6E6E6;
+    float: left;
+    width: 50%;
+}
+.indexSiteCrator .indexSiteCreateLft .slides-nav li a.four {
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+    border-bottom: 2px solid #E6E6E6;
+    float: left;
+    width: 50%;
+}
+.indexSiteCrator .indexSiteCreateLft .slides-nav li a.five {
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+    border-bottom: 2px solid #E6E6E6;
+    float: left;
+    width: 100%;
+}
+.indexSiteCrator .indexSiteCreateLft .slides-nav li.on a, .indexSiteCrator .indexSiteCreateLft .slides-nav li.on a:hover {
+    border-bottom: 6px solid #B21818;
+	background:#fbe9e9;
+}
+.indexSiteCreateRht .slides ul{height:483px; overflow:hidden;}
+.indexSiteCreateRht .slides ul li{
+	width:100%!important;
+}
+
+.frontindex {
+	z-index: 2;
+	/*-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;*/
+	position: absolute;
+	top: 0;
+	width: 193px;
+	height: 114px;
+	left: 0;
+}
+.indexFearListTxt {
+	/*-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);*/
+	background: #f4f4f4;
+	/*-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;*/
+	position: absolute;
+	top: 0;
+	width: 193px;
+	height: 114px;
+	left: 0;
+	text-align:center;
+	display:none;
+}
+.indexFearListTxt img{
+	height: 50px;
+    left: 70px;
+    position: absolute;
+    top: 24px;
+    width: 50px;
+	display:block!important;
+}
+.indexFearListTxt p{
+    line-height: 25px;
+    position: absolute;
+    top: 82px;
+    width: 100%;
+}
+.menuListIcon a{
+	border:1px solid #dddddd;	
+	width: 191px;
+	margin-bottom: 15px;
+	/*-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transition: 0.6s;
+	-moz-transform-style: preserve-3d;
+	-o-transition: 0.6s;
+	-o-transform-style: preserve-3d;
+	transition: 0.6s;
+	transform-style: preserve-3d;*/
+	position: relative;
+	height: 114px;
+}
+.menuListIcon a:hover .indexFearListTxt{
+	display:block;
+}
+.menuListIcon a:hover .frontindex{
+	display:none;
+}
+
+ul.Indexnav li ul.menuList li:first-child{
+	border-top: 0px solid #dddddd;
+}
+ul.Indexnav li ul.menuList li a{
+	color: #333333!important;
+    display: block;
+    float: none !important;
+    line-height: 30px;
+    list-style: none outside none;
+    text-align: center;
+	font:bold 15px/30px Century Gothic!important;
+}
+ul.Indexnav li ul.menuList li a:hover{
+	background:rgba(178,21,21,0.7);
+	color: #333333!important;
+}
+.slides-nav{padding:0!important; margin:0!important;}

@@ -1,0 +1,87 @@
+html{color:#000;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}
+.overxscroll { overflow-x: scroll;}
+
+.orderPopDivOuter {
+    float: left;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.menuPopInner{padding: 15px;}
+.orderPopDiv {
+    background: #FFFFFF;
+    border: 1px solid #DFDFE1;
+    margin: 0 0 20px;
+    padding: 10px;
+    position: relative;
+    width: 46%;
+}
+.orderPopInUl {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.orderPopInUl li {
+    color: #222222;
+    float: left;
+    font: 15px lato;
+    margin: 0 0 8px;
+    width: 100%;
+}
+.menuPopInHead {
+    border-bottom: 1px solid #DFE0E0;
+    color: #000000;
+    font: bold 20px lato;
+    margin: 0 0 8px;
+    padding: 0 0 10px;
+}
+.orderPopInUl li .name {
+    float: left;
+    font-weight: bold;
+    margin: 0 2% 0 0;
+    width: 26%;
+}
+.orderPopInUl li .col {
+    float: left;
+    margin: 0 5% 0 1%;
+}
+.orderPopInUl li .value {
+    float: left;
+    width: 64%;
+    word-wrap: break-word;
+}
+.ordertable {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    color: #222222;
+    font: 15px lato;
+    padding: 4px;
+    margin: 0 15px 15px;
+}
+.orderborder {
+    border-bottom: 1px solid #DBDBDB;
+}
+.ordertable table tr td:first-child {
+    border-left: 0 none;
+}
+.ordertable table tr td {
+    border-left: 1px solid #DFDFE1;
+    padding: 10px;
+}
+.ordertable1row td {
+    color: #7E0234;
+    font: bold 16px lato;
+    padding: 0 4px 10px;
+}
+.storePopAddProductTop{top:4px!important; width: 840px!important; margin-left: -420px!important;}
+.bold {
+    font-weight: bold !important;
+}
+.ordertable2row td.padleft {
+    padding-left: 20px;
+}
+.textright {
+    color: #F45A34;
+    margin: 0 0 0 10px;
+    text-align: right;
+}

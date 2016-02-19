@@ -1,0 +1,277 @@
+RewriteEngine on
+
+<FilesMatch "\.(ttf|otf|eot|woff)$">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+  </IfModule>
+</FilesMatch>
+
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+	FileETag None
+	<IfModule mod_headers.c>
+	Header unset ETag
+	Header set Cache-Control "max-age=31536000, Public"
+	</IfModule>
+</FilesMatch>
+
+<ifModule mod_gzip.c>
+  mod_gzip_on Yes
+  mod_gzip_dechunk Yes
+  mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+  mod_gzip_item_include handler ^cgi-script$
+  mod_gzip_item_include mime ^text/.*
+  mod_gzip_item_include mime ^application/x-javascript.*
+  mod_gzip_item_exclude mime ^image/.*
+  mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+
+<IfModule mod_expires.c>
+# Enable expirations
+ExpiresActive On 
+# Default directive
+ExpiresDefault "access plus 1 month"
+# My favicon
+ExpiresByType image/x-icon "access plus 1 year"
+# Images
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+# CSS
+ExpiresByType text/css "access 1 month"
+# Javascript
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType text/javascript "access plus 1 year"
+</IfModule>
+
+#ADDED TO PASS SECURITY METRICS XSS CROSS SITE SCRIPTING ERRORS 
+RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [OR] 
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR] 
+RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR] 
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR] 
+RewriteCond %{QUERY_STRING} ("|%22).*(>|%3E|<|%3C).* [NC,OR] 
+RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR] 
+RewriteCond %{QUERY_STRING} (javascript:).*(;).* [NC,OR] 
+RewriteCond %{QUERY_STRING} (;|'|"|%22).*(union|select|insert|drop|update|md5|benchmark|or|and|if).* [NC]
+RewriteRule ^(.*)$ error.php [NC]
+RewriteRule (;|<|>|'|`) error.php [NC] 
+#RewriteRule ^(.*)$ error.php [F,L] 
+#RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK) 
+#RewriteRule .* - [F] #END OF XSS FIX
+
+#RewriteCond   %{REQUEST_FILENAME}  !-f
+
+#Index----------------------------------
+RewriteRule ^$ index.php [NC,L]
+RewriteRule ^/$ index.php [NC,L]
+
+#Download file-----------------------
+RewriteRule ^uploads/files/([^\/]+)/([^\/]+.[^\/])$  download.php?filename=$2&id=$1 [NC,L]
+
+#Login----------------------------------
+RewriteRule ^login$ userLogin.php [NC,L]
+RewriteRule ^login/$ userLogin.php [NC,L]
+
+#Register----------------------------------
+RewriteRule ^register$ register.php [NC,L]
+RewriteRule ^register/$ register.php [NC,L]
+
+#UserHome----------------------------------
+RewriteRule ^userhome$ userHome.php [NC,L]
+RewriteRule ^userhome/$ userHome.php [NC,L]
+
+#MyAccount----------------------------------
+RewriteRule ^myaccount$ Myaccount.php [NC,L]
+RewriteRule ^myaccount/$ Myaccount.php [NC,L]
+
+#Mytransaction----------------------------------
+RewriteRule ^mytransaction$ Mytransaction.php [NC,L]
+RewriteRule ^mytransaction$/$ Mytransaction.php [NC,L]
+
+#MyHome----------------------------------
+RewriteRule ^myhome$ MyHome.php [NC,L]
+RewriteRule ^myhome/$ MyHome.php [NC,L]
+
+#MyInvites----------------------------------
+RewriteRule ^myinvites$ MyInvites.php [NC,L]
+RewriteRule ^myinvites/$ MyInvites.php [NC,L]
+
+#Support----------------------------------
+RewriteRule ^support$ Support.php [NC,L]
+RewriteRule ^support/$ Support.php [NC,L]
+
+#Terms----------------------------------
+RewriteRule ^terms$ terms.php [NC,L]
+RewriteRule ^terms/$ terms.php [NC,L]
+
+#privacy----------------------------------
+RewriteRule ^privacy$ privacy.php [NC,L]
+RewriteRule ^privacy/$ privacy.php [NC,L]
+
+#aboutus----------------------------------
+RewriteRule ^aboutUs$ aboutUs.php [NC,L]
+RewriteRule ^aboutUs/$ aboutUs.php [NC,L]
+
+#contactus----------------------------------
+RewriteRule ^contactUs$ contactUs.php [NC,L]
+RewriteRule ^contactUs/$ contactUs.php [NC,L]
+
+#onboarding
+RewriteRule ^onboarding$ onboarding.php [NC,L]
+RewriteRule ^onboarding/$ onboarding.php [NC,L]
+
+#Static Page-------------------------------------------------------
+#RewriteRule ^content/([^\/]+)$ staticPage.php?con_seourl=$1 [NC,L]
+#RewriteRule ^content/([^\/]+)/$ staticPage.php?con_seourl=$1 [NC,L]
+
+#source Page
+RewriteRule ^source/([^\/]+)$ source.php?pageurl=$1 [NC,L]
+RewriteRule ^source/([^\/]+)/$ source.php?pageurl=$1 [NC,L]
+
+#source  new Page
+#RewriteRule ^sourcenew$ sourceNew.php[NC,L]
+#RewriteRule ^sourcenew/$ sourceNew.php[NC,L]
+
+#source  new Page
+#RewriteRule ^sourceNew/([^\/]+)$ sourceNew.php?pageurl=$1 [NC,L]
+#RewriteRule ^sourceNew/([^\/]+)/$ sourceNew.php?pageurl=$1 [NC,L]
+
+#Post list in new page
+RewriteRule ^subpostlist/([^\/]+)$ postListInSource.php?cat=$1 [NC,L]
+RewriteRule ^subpostlist/([^\/]+)/$ postListInSource.php?cat=$1 [NC,L]
+
+
+#source  new Page
+#RewriteRule ^sourceNew/([^\/]+)/([^\/]+)$ sourceNew.php?page=$1&limit=$2[NC,L]
+#RewriteRule ^sourceNew/([^\/]+)/([^\/]+)/$ sourceNew.php?page=$1&limit=$2 [NC,L]
+
+#post comment Page
+RewriteRule ^postcomment/([^\/]+)/([^\/]+)$ postComment.php?post_id=$1&post_title=$2 [NC,L]
+RewriteRule ^postcomment/([^\/]+)/([^\/]+)$ postComment.php?post_id=$1&post_title=$2 [NC,L]
+
+
+#product view Page
+RewriteRule ^productview/([^\/]+)$ productView.php?product_id=$1 [NC,L]
+RewriteRule ^productview/([^\/]+)$ productView.php?product_id=$1 [NC,L]
+
+
+#product list  in source page based on category
+RewriteRule ^productlist/([^\/]+)$ productListInSource.php?cat_id=$1 [NC,L]
+RewriteRule ^productlist/([^\/]+)$ productListInSource.php?cat_id=$1 [NC,L]
+
+#Myhome
+RewriteRule ^myhome/([^\/]+)$ MyHome.php?domain_id=$1 [NC,L]
+RewriteRule ^myhome/([^\/]+)$ MyHome.php?domain_id=$1 [NC,L]
+
+RewriteRule ^myhome/([^\/]+)/([^\/]+)$ MyHome.php?domain_id=$1&msg=success [NC,L]
+RewriteRule ^myhome/([^\/]+)/([^\/]+)$ MyHome.php?domain_id=$1&msg=success [NC,L]
+
+RewriteRule ^point_domain/([^\/]+)$ pointDomain.php?domain_id=$1 [NC,L]
+RewriteRule ^point_domain/([^\/]+)$ pointDomain.php?domain_id=$1 [NC,L]
+
+RewriteRule ^point_domain/([^\/]+)/([^\/]+)$ pointDomain.php?domain_id=$1&msg=success [NC,L]
+RewriteRule ^point_domain/([^\/]+)/([^\/]+)$ pointDomain.php?domain_id=$1&msg=success [NC,L]
+
+#buyCredits
+RewriteRule ^buycredits$ buyCredits.php [NC,L]
+RewriteRule ^buycredits/$ buyCredits.php [NC,L]
+
+#buyCredits
+RewriteRule ^buy_credits/([^\/]+)$ buyCredits.php?price=$1 [NC,L]
+RewriteRule ^buy_credits/([^\/]+)$ buyCredits.php?price=$1 [NC,L]
+
+#buyCredits
+RewriteRule ^buy_credits/([^\/]+)/([^\/]+)$ buyCredits.php?domain_id=$1&action=$2 [NC,L]
+RewriteRule ^buy_credits/([^\/]+)/([^\/]+)$ buyCredits.php?domain_id=$1&action=$2 [NC,L]
+
+#subscription
+RewriteRule ^subscription$ subscription.php [NC,L]
+RewriteRule ^subscription/$ subscription.php [NC,L]
+
+#subscription
+RewriteRule ^subscription/([0-9]+)/([^\/]+)$ subscription.php?domain_id=$1&msg=$2 [NC,L]
+RewriteRule ^subscription/([0-9]+)/([^\/]+)$ subscription.php?domain_id=$1&msg=$2 [NC,L]
+
+RewriteRule ^subscription/([0-9]+)$ subscription.php?domain_id=$1 [NC,L]
+RewriteRule ^subscription/([0-9]+)$ subscription.php?domain_id=$1 [NC,L]
+
+#subscription
+RewriteRule ^subscription/([^\/]+)/([^\/]+)/([^\/]+)$ subscription.php?user_id=$1&domain_id=$2&action=$3 [NC,L]
+RewriteRule ^subscription/([^\/]+)/([^\/]+)/([^\/]+)$ subscription.php?user_id=$1&domain_id=$2&action=$3 [NC,L]
+
+#subscription
+RewriteRule ^paymentoption$ paymentOption.php [NC,L]
+RewriteRule ^paymentoption/$ paymentOption.php[NC,L] 
+
+#subscription
+RewriteRule ^paymentoption/([^\/]+)/([^\/]+)/([^\/]+)$ paymentOption.php?amount=$1&domain_id=$2&product_id=$3 [NC,L]
+RewriteRule ^paymentoption/([^\/]+)/([^\/]+)/([^\/]+)$ paymentOption.php?amount=$1&domain_id=$2&product_id=$3 [NC,L]
+
+#Thanks
+RewriteRule ^thanks$ thanks.php [NC,L]
+RewriteRule ^thanks/$ thanks.php [NC,L]
+
+#BuildEditor
+RewriteRule ^build$ buildEdit.php [NC,L]
+RewriteRule ^build/$ buildEdit.php [NC,L]
+
+#Mobile Options
+RewriteRule ^mobile$ mobOptions.php [NC,L]
+RewriteRule ^mobile/$ mobOptions.php [NC,L]
+
+#Themes
+RewriteRule ^themes$ themes_support.php [NC,L]
+RewriteRule ^themes/$ themes_support.php [NC,L]
+
+#Hostings
+RewriteRule ^hostings$ host.php [NC,L]
+RewriteRule ^hostings/$ host.php [NC,L]
+
+#Bloggings
+RewriteRule ^bloging$ blogging.php [NC,L]
+RewriteRule ^bloging/$ blogging.php [NC,L]
+
+#Photos
+RewriteRule ^photos$ photos.php [NC,L]
+RewriteRule ^photos/$ photos.php [NC,L]
+
+#Forms
+RewriteRule ^forms$ forms.php [NC,L]
+RewriteRule ^forms/$ forms.php [NC,L]
+
+#Domains
+RewriteRule ^domains$ domains.php [NC,L]
+RewriteRule ^domains/$ domains.php [NC,L]
+
+#Domains
+RewriteRule ^checkout$ checkoutPage.php [NC,L]
+RewriteRule ^checkout/$ checkoutPage.php [NC,L]
+
+#Facebook Share
+RewriteRule ^faceshare$ facebookShare.php [NC,L]
+RewriteRule ^faceshare/$ facebookShare.php [NC,L]
+
+#shippingAddress
+RewriteRule ^shippage$ showShippingAddr.php [NC,L]
+RewriteRule ^shippage/$ showShippingAddr.php [NC,L]
+ 
+#Main page
+RewriteRule ^main$ main.php [NC,L]
+RewriteRule ^main/$ main.php [NC,L]
+ 
+#Reset Pass
+RewriteRule ^resetpass/([^\/]+)$ resetPass.php?forgot=$1 [NC,L]
+RewriteRule ^resetpass/([^\/]+)$ resetPass.php?forgot=$1 [NC,L]
+
+#googlelogin page
+RewriteRule ^googlelogin$ googlelogin.php [NC,L]
+RewriteRule ^googlelogin/$ googlelogin.php [NC,L]
+
+#order Payment page
+RewriteRule ^orderpayment orderPayment.php [NC,L]
+RewriteRule ^orderpayment/$ orderPayment.php [NC,L]
+ 
+RewriteRule ^([a-zA-Z0-9-]+)/?$ sourceNew.php?pageurl=$1 
+
+#ErrorDocument 404 '<html><head><title>Sayfa Bulunamadı | Enkolayweb.com</title></head><body><div align="center"><img src="http://www.roamsofttech.com/images/404-page-notfound-error.jpg" alt="404 Page is not found error"></div></body></html>'

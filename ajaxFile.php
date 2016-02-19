@@ -3,6 +3,22 @@
 include("includes/config.inc.php");
 $objSite->languageSession();
 
+#Facebook Login:
+if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'userLoginFb'){			
+	$objUserShare	=	new UserShare;
+	$objUserShare->loginFacebook();
+}
+#Forget Password:
+if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'forgetPassword'){
+	$objCommon = new Common;
+	$objCommon->forgetPass();
+}
+
+
+if(!$_SESSION['user_id']){
+	die('You do not have permision for this action!');
+}
+
 /***************************************veni functions start**************************/
 		//this is for show categories list in categories page of store
 	if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'categoryList')
@@ -276,16 +292,7 @@ $objSite->languageSession();
 		$objCommon = new Common;
 		$objCommon->addNewDomain();
 	}
-	#Facebook Login:
-	if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'userLoginFb'){			
-		$objUserShare	=	new UserShare;
-		$objUserShare->loginFacebook();
-	}
-	#Forget Password:
-	if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'forgetPassword'){
-		$objCommon = new Common;
-		$objCommon->forgetPass();
-	}
+	
 	//logout
 	if(isset($_GET['action']) && !empty($_GET['action']) && $_GET['action'] == 'logOut'){
 		$objCommon = new Common;

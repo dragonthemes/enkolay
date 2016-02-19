@@ -1,6 +1,11 @@
  <?php
 include("includes/config.inc.php");
 $objSite->languageSession();
+
+if(!$_SESSION['user_id']){
+	die('You do not have permision for this action!');
+}
+
 //echo __LINE__;die();
 $ret = array();
 $page_id = $_SESSION['page_id'];

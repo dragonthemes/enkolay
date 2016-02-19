@@ -2,6 +2,10 @@
 include("includes/config.inc.php");
 $objSite->languageSession();
 
+if(!$_SESSION['user_id']){
+  die('You do not have permision for this action!');
+}
+
 $page_id = $_SESSION['page_id'];
 $domain_id = $_SESSION['domain_id'];
 //define ("MAX_SIZE","9000"); 

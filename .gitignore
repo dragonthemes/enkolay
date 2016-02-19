@@ -1,7 +1,7 @@
-/admincp/*
-/uploads/*
-/resources/*
-/includes/resources/*
-/includes/dbDetails.php
-/includes/setup.php
-/theme/default/templates_C
+admincp/*
+uploads/*
+resources/*
+includes/resources/*
+includes/dbDetails.php
+includes/setup.php
+theme/default/templates_c/*

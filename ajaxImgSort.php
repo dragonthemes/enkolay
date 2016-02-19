@@ -3,7 +3,7 @@
 include("includes/config.inc.php");
 $objSite->languageSession();
 
-if(!$_SESSION['user_id']){
+if(!Authentication::checkUserLoggedIn()){
 	die('You do not have permision for this action!');
 }
 

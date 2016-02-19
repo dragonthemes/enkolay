@@ -15,7 +15,7 @@ if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'f
 }
 
 
-if(!$_SESSION['user_id']){
+if(!Authentication::checkUserLoggedIn()){
 	die('You do not have permision for this action!');
 }
 

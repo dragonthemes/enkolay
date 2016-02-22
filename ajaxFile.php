@@ -14,8 +14,8 @@ if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'f
 	$objCommon->forgetPass();
 }
 
-
-if(!Authentication::checkUserLoggedIn()){
+$auth = new Authentication();
+if(!$auth->checkPermision()){
 	die('You do not have permision for this action!');
 }
 

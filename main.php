@@ -6,6 +6,12 @@ $objSite->languageSession();
 #.............................................................................................
 $objCommon->user_unauthetic();
 
+
+//echo '<pre>';
+//print_r($_SESSION);
+//echo '</pre>';
+
+
 #echo $_SESSION['themeOnuse'];
 
 if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'domainAdd')

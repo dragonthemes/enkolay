@@ -3,8 +3,9 @@
 include("includes/config.inc.php");
 $objSite->languageSession();
 
-if(!Authentication::checkUserLoggedIn()){
-	die('You do not have permision for this action!');
+$auth = new Authentication();
+if(!$auth->checkPermision()){
+    die('You do not have permision for this action!');
 }
 
 #this function used for sorting options details

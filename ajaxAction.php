@@ -2,9 +2,11 @@
     include("includes/config.inc.php");
     $objSite->languageSession();
 
-    if(!Authentication::checkUserLoggedIn()){
+    $auth = new Authentication();
+    if(!$auth->checkPermision()){
         die('You do not have permision for this action!');
     }
+
     #.............................................................................................
     if(isset($_REQUEST['action'])){ 
     	$action	 = $_REQUEST['action'];

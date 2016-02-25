@@ -1,0 +1,2 @@
+[14-Oct-2014 17:04:01 Turkey] PHP Parse error:  syntax error, unexpected ''categor' (T_ENCAPSED_AND_WHITESPACE), expecting ']' in /home/enkolayw/public_html/includes/classes/class.Common.php on line 202
+[04-Nov-2014 08:38:34 Turkey] PHP Parse error:  syntax error, unexpected ''admi' (T_ENCAPSED_AND_WHITESPACE), expecting ']' in /home/enkolayw/public_html/includes/language/TR/commonadmin.php on line 433

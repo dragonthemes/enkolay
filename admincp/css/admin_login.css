@@ -1,0 +1,187 @@
+/* CSS Document */
+@import url("reset.css");
+@font-face {
+    font-family: opensans;
+    src: url(../../resources/fonts/opensans.eot);
+    src: url(../../resources/fonts/opensans.eot?#iefix) format('embedded-opentype'),
+         url(../../resources/fonts/opensans.woff) format('woff'),
+         url(../../resources/fonts/opensans.ttf) format('truetype'),
+         url(../../resources/fonts/opensans.svg#open_sansregular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: opensansbold;
+    src: url(../../resources/fonts/opensansbold.eot);
+    src: url(../../resources/fonts/opensansbold.eot?#iefix) format('embedded-opentype'),
+         url(../../resources/fonts/opensansbold.woff) format('woff'),
+         url(../../resources/fonts/opensansbold.ttf) format('truetype'),
+         url(../../resources/fonts/opensansbold.svg#open_sansbold) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: opensanslight;
+    src: url(../../resources/fonts/opensanslight.eot);
+    src: url(../../resources/fonts/opensanslight.eot?#iefix) format('embedded-opentype'),
+         url(../../resources/fonts/opensanslight.woff) format('woff'),
+         url(../../resources/fonts/opensanslight.ttf) format('truetype'),
+         url(../../resources/fonts/opensanslight.svg#open_sanslight) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: opensanssemi;
+    src: url(../../resources/fonts/opensanssemibold.eot);
+    src: url(../../resources/fonts/opensanssemibold.eot?#iefix) format('embedded-opentype'),
+         url(../../resources/fonts/opensanssemibold.woff) format('woff'),
+         url(../../resources/fonts/opensanssemibold.ttf) format('truetype'),
+         url(../../resources/fonts/opensanssemibold.svg#open_sanssemibold) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*@font-face {font-family:journal; src: url('../fonts/journal.ttf') format('truetype');}*/
+
+.flt{float:left;}
+.frt{float:right;}
+.clr{clear:both;}
+body.loginBg{font:normal 12px opensans; color:#3B3B3B; /*background:url(../images/loginBg.png) repeat 50% center / cover!important;*/background:#eeeeee!important;}
+a{text-decoration:none; color:#000000;}
+.wrapperOut{margin:0 auto; width:400px; height:auto;}
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+.contbg{
+	background: #ffffff;
+    border-bottom: none;
+    border-radius: 5px;
+    box-shadow: 0 0 7px #b4b4b4;
+    height: auto;
+    margin-top: 110px;
+    padding: 0 20px;
+    width: auto;
+}
+.logntfnt{color:#000; font:bold 18px opensans; border-bottom:1px solid #cccccc; width:100%; padding-bottom:5px; margin-bottom:5px;}
+.inptdv{width:100%;}
+.inptdv{font:normal 12px/25px opensans; width:100%;}
+.txtbxOuter{
+	border: 1px solid #DDDDDD;
+    margin-bottom: 10px;
+    padding: 15px 10px;
+}
+.loginshadow {
+    background:url(../images/loginshadow.png) no-repeat scroll center -7px;
+    height: 30px;
+}
+.txtbxuser{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+    border-bottom: 0px solid #DDDDDD;
+    width: 100%;
+	padding-right:30px;
+	background:url(../images/usericon.png) no-repeat left top;
+}
+.txtbxpass{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-right:30px;
+    border: 0px solid #DDDDDD;
+    width: 100%;
+	background:url(../images/passwordicon.png) no-repeat left top;
+}
+.logincnt{width:180px; height:auto;}
+.loginHead{
+	border-bottom: 1px solid #A6A6A6;
+    color: #333333;
+    display: block;
+    font-family: Trebuchet MS;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 2.3em;
+    text-align: left;
+}
+.loginFormInner{
+	margin: 4px 0;
+    padding: 10px 0;
+}
+.login{
+	float: right;
+    font-size: 13px !important;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 8px 14px !important;
+	border:none;
+	background:#333399;
+	color:#ffffff;
+}
+.errorMsg{
+	color:#FF0000;
+	background: #ffffff;
+    border-radius: 2px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+input,textarea,select{
+	outline:none;
+}
+.txtbxreset{
+    border: medium none!important;
+    box-shadow: none!important;
+    margin: 0!important;
+    padding: 0 0 0 20px!important;
+	font-family: opensanssemi;
+	font-size: 13px !important;
+}
+.forgot{
+	color:#c10000;
+	padding-top:15px;
+	display: inline-block;
+}
+.redStar{
+	color:#ff0000;
+}
+
+.modal-header h3 {
+    font-family: opensanssemi!important;
+    font-size: 20px!important;
+}
+.txt1{
+	padding: 13px 12px;
+    width: 95%;
+	border:1px solid #dddddd;
+	border-radius:4px;
+	margin-top:10px;
+}
+input, button, select, textarea {
+    font-family: 'Trebuchet MS' !important;
+}
+
+.errormsg {
+    background: #EF7366;
+    border: 1px solid #E16456;
+    border-radius: 4px;
+    color: #FFFFFF;
+    line-height: 40px;
+    margin: 10px 10px 0;
+    text-align: center;
+    text-shadow: none;
+}
+.txtbxreset:focus{
+	color:#333333;
+	border:1px solid #ff6600;
+}

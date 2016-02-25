@@ -82,7 +82,7 @@ class Authentication extends Site{
 			$page_id = $this->getPageId();
 		}
 
-		if($domain_id == null || $page_id == null){
+		if($domain_id == null || ($domain_id == null && $page_id == null)){
 			return true;
 		}else{
 			global $CFG;

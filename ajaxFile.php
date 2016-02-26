@@ -14,6 +14,14 @@ if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'f
 	$objCommon->forgetPass();
 }
 
+#...............................................................................................
+//Update image alignment
+if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action']=="subdomainPasswordChecking")
+{
+	$objCommon = new Common;
+	$objCommon->checkDomainPassword();
+}
+
 $auth = new Authentication();
 if(!$auth->checkPermision()){
 	die('You do not have permision for this action!');
@@ -1467,13 +1475,7 @@ if(!$auth->checkPermision()){
         else        
             echo 'invalid';        
     }  
-    #...............................................................................................
-    //Update image alignment
-    if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action']=="subdomainPasswordChecking")
-    {
-        $objCommon = new Common;
-        $objCommon->checkDomainPassword();
-    }
+    
     
     
    if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'singleImageShow')

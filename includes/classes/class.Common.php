@@ -897,7 +897,7 @@ function addRegister()
 		  {
 		  		$username		=	$this->filterInput($_POST['username']);
 			   	$email			=	$this->filterInput($_POST['email']);
-			   	$password		=	$this->filterInput($_POST['password']);
+			   	$password		=	$this->filterInput(md5($_POST['password']));
 			   	
 			   	$num_customer = $this->getNumValues($CFG['table']['register'],"`email` = '".$email."' AND `log_status` ='2' ");
                 #$username_exist = $this->getNumValues($CFG['table']['register'],"username = '".$username."' AND log_status ='2' ");
@@ -1029,7 +1029,7 @@ function chkUserLogin()
 		global $CFG;
 	
 		$user_email	= $this->filterInput($_POST['user_email']);
-		$Password	= $this->filterInput($_POST['user_password']);
+		$Password	= $this->filterInput(md5($_POST['user_password']));
 		
 		if($user_email)
 			{
@@ -1085,8 +1085,8 @@ function chkUserLogin()
             if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']))
                 {
                     global $CFG,$objSmarty;
-            	  	$old_password = $this->filterInput($_POST["currentpass"]);
-            	 	$new_password = $this->filterInput($_POST["newpass"]);
+            	  	$old_password = $this->filterInput(md5($_POST["currentpass"]));
+            	 	$new_password = $this->filterInput(md5($_POST["newpass"]));
               		if($this->chkPassword($old_password,$_SESSION['user_id']))
             		 	{
             				$sql_regupdate	=	"UPDATE ".$CFG['table']['register']." SET password = '".$this->filterInput($_POST['confirm_newpass'])."'  WHERE user_id = '".$this->filterInput($_SESSION['user_id'])."'";
@@ -9779,7 +9779,10 @@ function nestPaymentProcess()
             	   else          			
             			$server   = $CFG['payment']['paypal']['url'];
                    
-                   $business      = $CFG['payment']['paypal']['merchant_email'];     
+                   $business      = $CFG['payment']['paypal']['merchant_email'];
+
+
+				   $server   = 'https://www.paypal.com/cgi-bin/webscr';
             	          
                    echo '<form name= "paypal" action="'.$server.'" method="post" id="paypal_form">';
                    echo '<input type=hidden name=amount value="'.$amount.'" />';

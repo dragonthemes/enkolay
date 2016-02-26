@@ -46,7 +46,7 @@ class Admin extends Site{
 		global $CFG;
 		
 		$username	= $this->filterInput($_POST["admin_username"]);
-		$Password	= $this->filterInput($_POST["admin_password"]);
+		$Password	= $this->filterInput(md5($_POST["admin_password"]));
 		
 		$num_admin = $this->getNumvalues($CFG['table']['admin'],"username='".$this->filterInput($username)."' AND password='".$this->filterInput($Password)."' AND log_status = '1'");
 		$AdminId   = $this->getValue("admin_id",$CFG['table']['admin'],"username='".$this->filterInput($username)."' AND password='".$this->filterInput($Password)."' AND log_status = '1'");
@@ -96,9 +96,9 @@ class Admin extends Site{
 	#ADMIN CHANGE PWD
 	function change_pwd_update_register(){
 		global $CFG;
-		$old_password = $this->My_addslashes($_POST["old_password"]);
+		$old_password = $this->My_addslashes(md5($_POST["old_password"]));
 		 
-		$new_password = $_POST["new_password"];
+		$new_password = md5($_POST["new_password"]);
 	    
 		if($this->chkPasswordInAdmin($old_password,$_SESSION['adminid'])){
 				$UpQuery  = "UPDATE ".$CFG['table']['admin']." SET password = '".$this->filterInput($new_password)."' WHERE admin_id  = ". $this->filterInput($_SESSION['adminid']);

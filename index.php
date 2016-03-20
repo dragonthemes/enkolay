@@ -106,14 +106,12 @@ else
 		$objCommon->getPriceList();	
 		$objSmarty->assign('objCommon',$objCommon);
 		if($_SESSION['user_id'])
-			{
+		{
 				#header("Location:userHome.php");
                 $objSite->redirect("userHome.php","userhome");
-			}
+		} else {
+			include 'wp/index.php';
+		}
 		#.............................................................................................
-		#SMARTY ASSIGNING 
-		$main_content = $objSmarty->fetch('index.tpl');
-		$objSmarty->assign("MAIN_CONTENT", $main_content);
-		$objSmarty->display('main.tpl');
 	}
 ?>

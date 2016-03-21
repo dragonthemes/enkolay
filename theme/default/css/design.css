@@ -1501,3 +1501,11 @@ box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);z-index: 99;-webkit-box-sizing: borde
 .buildImgTxt{max-width:calc(100% - 15px);}
 /*.uploadImgBg img{width:270px;}*/
 .heightauto{ height:auto!important;}
+.img-circle {
+    border-radius: 50%;
+    clip-path: circle(60px at center);
+
+}
+.columnlist-position {
+    text-align: center;
+}

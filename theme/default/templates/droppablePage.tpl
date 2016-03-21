@@ -1701,8 +1701,8 @@ Form Entries
 
                          {if $pagefirstlist[pagelist].team_with_text}
                          {assign var="columnimages" value=$objCommon->getColumnTextImages($pagefirstlist[pagelist].pagelist)}
-
-                         <li id="page_{$pagefirstlist[pagelist].pagelist}" class="columnlist">                                                                 
+                        
+                         <li id="page_{$pagefirstlist[pagelist].pagelist}" class="columnlist columnlist-position">                                                                 
                               <div class="form_element_control">
                                    <div class="controlMidOuter">
                                         <div class="controlMidBg"></div>
@@ -1728,7 +1728,12 @@ Form Entries
                                                        {assign var="images_title" value=1}
                                                   {/if}
 
-                                                   {if $imge.column_id eq $num and $imge.status eq 'columnImageText_desc'}
+                                                  {if $imge.column_id eq $num and $imge.status eq 'columnImageText_position'}
+                                                       {assign var="srcIndex_position" value=$k}
+                                                       {assign var="images_position" value=1}
+                                                  {/if}
+
+                                                  {if $imge.column_id eq $num and $imge.status eq 'columnImageText_desc'}
                                                        {assign var="srcIndex_desc" value=$k}
                                                        {assign var="images_desc" value=1}
                                                   {/if}
@@ -1739,10 +1744,10 @@ Form Entries
                                                        <input type="button" class="hide" id="coltext_image{$smarty.section.foo.rownum}" onclick="showColumnImagePopup('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');"/>
 
                                                         {if isset($images) and $images eq 1}
-                                                            <img src="{$SITE_DOMAIN_IMAGES_URL}/{$columnimages.$srcIndex.image_name}" alt="Column Text Image" />
+                                                            <img src="{$SITE_DOMAIN_IMAGES_URL}/{$columnimages.$srcIndex.image_name}" class="staff-image img-circle" alt="Column Text Image" />
                                                             {assign var="images" value=0}
                                                        {else}
-                                                            <img src="{$SITE_BASEURL}/images/sample1.jpg" alt="Column Text Image" />
+                                                            <img src="{$SITE_BASEURL}/images/sample1.jpg" class="staff-image img-circle" alt="Column Text Image" />
                                                        {/if}
 
                                                   </label>
@@ -1752,7 +1757,15 @@ Form Entries
                                                             {$columnimages.$srcIndex_title.column_text_title}
                                                             {assign var="images_title" value=0}
                                                        {else}
-                                                            Sample Title
+                                                            Name
+                                                       {/if}
+                                                  </div>
+                                                  <div class="coltext_position contentedit" id="coltext_position_{$smarty.section.foo.rownum}" onblur="updatePosition_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
+                                                       {if isset($images_position) and $images_position eq 1}
+                                                            {$columnimages.$srcIndex_position.column_text_position}
+                                                            {assign var="images_position" value=0}
+                                                       {else}
+                                                            Staff's position
                                                        {/if}
                                                   </div>
                                                   <div class="coltext_desc contentedit" id="coltext_desc_{$smarty.section.foo.rownum}" onblur="updateDesc_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
@@ -1760,7 +1773,7 @@ Form Entries
                                                             {$columnimages.$srcIndex_desc.column_text_desc}
                                                             {assign var="images_desc" value=0}
                                                        {else}
-                                                            This is the test description
+                                                            Introduction about staff
                                                        {/if}
                                                   </div>
                                              </div>

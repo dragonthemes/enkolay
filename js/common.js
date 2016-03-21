@@ -6445,3 +6445,16 @@ function updateDesc_columnImage(page_list_id,column_id)
 		
 		});                 
 }
+function updatePosition_columnImage(page_list_id,column_id)
+{			        
+    
+ 	var textval   = $('#coltext_position_'+column_id).html();
+	var position     = textval; 
+	var domain_id = $('#domain_id').val();
+	var page_id   = $('#page_id').val();
+	var column_id = column_id;
+
+	$.post(jssitebaseUrl+'/ajaxFile.php',{'domain_id':domain_id,'page_id':page_id,'page_list_id':page_list_id,'position':position,'column_id':column_id,'action':'updatePosition_columnImage'}, function(output){
+		
+		});                 
+}

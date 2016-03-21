@@ -1594,5 +1594,10 @@ if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action']=="Add
 		$objCommon->updateDesc_columnImage();
 	}
 
+	if(isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'updatePosition_columnImage' ){
+		$objCommon = new Common;
+		$objCommon->updatePosition_columnImage();
+	}
+
 
 ?>

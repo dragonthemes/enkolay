@@ -10438,7 +10438,7 @@ function getInvoicebuyDetailsValues($domain_id)
  	global $CFG,$objSmarty;
    $columnimages = array();
 
- 	$columnimages    = $this->getMultiValue("image_name,column_text_title,column_text_desc,column_id,status",$CFG['table']['temp_column_text_images']," page_list_id='".$pageid."' ORDER BY column_id ASC");
+ 	$columnimages    = $this->getMultiValue("image_name,column_text_title,column_text_position,column_text_desc,column_id,status",$CFG['table']['temp_column_text_images']," page_list_id='".$pageid."' ORDER BY column_id ASC");
  	//echo "<pre>";print_r($columnimages);echo "</pre>";
  
  	return $columnimages;
@@ -10472,6 +10472,38 @@ function updateTilte_columnImage()
         	                          column_text_title = '".$title."',
         	                          publish_status    = 'U',
         	                          status            = 'columnImageText_title' ";
+			$InsResult = mysql_query($UpQuery) or die($this->mysql_error($UpQuery));
+
+        }           
+}
+
+function updatePosition_columnImage()
+{
+	global $CFG,$objSmarty;
+	$pageid       = $this->filterInput($_POST['page_id']);
+	$column_id    = $this->filterInput($_POST['column_id']);
+	$domain_id    = $this->filterInput($_POST['domain_id']);
+	$page_list_id = $this->filterInput($_POST['page_list_id']);
+	$title        = trim($_POST['position']);
+	
+	$textVal    = $this->getValue("img_id",$CFG['table']['temp_column_text_images']," page_id='".$pageid."' AND domain_id='".$domain_id."' AND page_list_id ='".$page_list_id."' AND column_id = '".$column_id."' AND status  = 'columnImageText_position'");
+
+    if(isset($textVal) && !empty($textVal)) 
+        {
+            $UpQuery  = " UPDATE ".$CFG['table']['temp_column_text_images']." SET column_text_position = '".$title."'
+                              WHERE page_list_id ='".$page_list_id."' AND page_id='".$pageid."' AND domain_id='".$domain_id."' AND column_id = '".$column_id."' AND status  = 'columnImageText_position'";
+			$UpResult = mysql_query($UpQuery) or die($this->mysql_error($UpQuery));
+        } 
+        else
+        {
+        	$UpQuery  = " INSERT INTO ".$CFG['table']['temp_column_text_images']." SET 
+        	                          page_id           = '".$pageid."',
+        	                          domain_id         = '".$domain_id."',
+        	                          page_list_id      = '".$page_list_id."',
+        	                          column_id         = '".$column_id."',
+        	                          column_text_position = '".$title."',
+        	                          publish_status    = 'U',
+        	                          status            = 'columnImageText_position' ";
 			$InsResult = mysql_query($UpQuery) or die($this->mysql_error($UpQuery));
 
         }           

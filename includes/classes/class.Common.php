@@ -10440,7 +10440,7 @@ function getInvoicebuyDetailsValues($domain_id)
 
  	$columnimages    = $this->getMultiValue("image_name,column_text_title,column_text_desc,column_id,status",$CFG['table']['temp_column_text_images']," page_list_id='".$pageid."' ORDER BY column_id ASC");
  	//echo "<pre>";print_r($columnimages);echo "</pre>";
-
+ 
  	return $columnimages;
  	
  }

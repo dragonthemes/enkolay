@@ -132,6 +132,7 @@
 						<li class="sectioncontent">
 								<ul class="clearfix leftuldiv">
 									<li class="dragableBox listbox" id="box6" data-title="box6"><div class="outerToolwrap"><span class="dividerimgclass bgicon"></span><div class="title-box"><span class="title">{$LANG.main_page_divider}</span></div></div></li>
+									<li class="dragableBox listbox" id="box17" data-title="box17"><div class="outerToolwrap"><span class="socialimgclass bgicon"></span><div class="title-box"><span class="title">Team With Text</span></div></div></li>
 								</ul>
 								<div style="clear:both"></div>
 							</li>

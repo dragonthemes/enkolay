@@ -1626,8 +1626,8 @@ Form Entries
                          </li>
                          {/if}
 						
-					 {if $pagefirstlist[pagelist].column_image_show}
-                          {assign var="columnimages" value=$objCommon->getColumnTextImages($pagefirstlist[pagelist].pagelist)}
+                    	{if $pagefirstlist[pagelist].column_image_show}
+                         {assign var="columnimages" value=$objCommon->getColumnTextImages($pagefirstlist[pagelist].pagelist)}
 
                          <li id="page_{$pagefirstlist[pagelist].pagelist}" class="columnlist">                                                                 
                               <div class="form_element_control">
@@ -1693,41 +1693,114 @@ Form Entries
      								</div>
                                              
                                         {/section} 
+							</div>
+						</div> 
+                         </li>
+                         {/if}
 
-								<!-- <div class="addwidth span4">     
-									<label class="coltext_image" for="coltext_image2">
-										<input type="button" class="hide" id="coltext_image2" onclick="showColumnImagePopup('{$columnpagefirstlist[colpagelist].pagelist}','2');"/>
-										{if isset($columnimages.0.column_id) and $columnimages.0.column_id neq '' and $columnimages.0.column_id eq '2'}
+
+                         {if $pagefirstlist[pagelist].team_with_text}
+                         {assign var="columnimages" value=$objCommon->getColumnTextImages($pagefirstlist[pagelist].pagelist)}
+
+                         <li id="page_{$pagefirstlist[pagelist].pagelist}" class="columnlist">                                                                 
+                              <div class="form_element_control">
+                                   <div class="controlMidOuter">
+                                        <div class="controlMidBg"></div>
+                                   </div>
+                                   <div class="deleteOuter">
+                                        <div class="deleteBg" title="Delete" onclick="showDelPopup('{$smarty.session.domain_id}','{$smarty.session.page_id}','{$pagefirstlist[pagelist].pagelist}','column_image_show');"><i class="fa fa-trash-o"></i></div>
+                                   </div>
+                              </div>
+                               <div class="tablesampleouter">
+                                    <div class="sample2  columsBor row-fluid no-space">
+                                        {section name=foo start=0 loop=3 step=1} 
+                                             {assign var="num" value=$smarty.section.foo.rownum}
+
+                                             {foreach from=$columnimages key=k item=imge}
+
+                                                  {if $imge.column_id eq $num and $imge.status eq 'columnImageText'}
+                                                       {assign var="srcIndex" value=$k}
+                                                       {assign var="images" value=1}
+                                                  {/if}
+
+                                                  {if $imge.column_id eq $num and $imge.status eq 'columnImageText_title'}
+                                                       {assign var="srcIndex_title" value=$k}
+                                                       {assign var="images_title" value=1}
+                                                  {/if}
+
+                                                   {if $imge.column_id eq $num and $imge.status eq 'columnImageText_desc'}
+                                                       {assign var="srcIndex_desc" value=$k}
+                                                       {assign var="images_desc" value=1}
+                                                  {/if}
+                                             {/foreach}
+
+                                             <div class="addwidth span4">     
+                                                  <label class="coltext_image" for="coltext_image{$smarty.section.foo.rownum}">
+                                                       <input type="button" class="hide" id="coltext_image{$smarty.section.foo.rownum}" onclick="showColumnImagePopup('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');"/>
+
+                                                        {if isset($images) and $images eq 1}
+                                                            <img src="{$SITE_DOMAIN_IMAGES_URL}/{$columnimages.$srcIndex.image_name}" alt="Column Text Image" />
+                                                            {assign var="images" value=0}
+                                                       {else}
+                                                            <img src="{$SITE_BASEURL}/images/sample1.jpg" alt="Column Text Image" />
+                                                       {/if}
+
+                                                  </label>
+
+                                                  <div class="coltext_title contentedit" id="coltext_title_{$smarty.section.foo.rownum}" onblur="updateTilte_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
+                                                       {if isset($images_title) and $images_title eq 1}
+                                                            {$columnimages.$srcIndex_title.column_text_title}
+                                                            {assign var="images_title" value=0}
+                                                       {else}
+                                                            Sample Title
+                                                       {/if}
+                                                  </div>
+                                                  <div class="coltext_desc contentedit" id="coltext_desc_{$smarty.section.foo.rownum}" onblur="updateDesc_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
+                                                       {if isset($images_desc) and $images_desc eq 1}
+                                                            {$columnimages.$srcIndex_desc.column_text_desc}
+                                                            {assign var="images_desc" value=0}
+                                                       {else}
+                                                            This is the test description
+                                                       {/if}
+                                                  </div>
+                                             </div>
+                                             
+                                        {/section} 
+
+                                        <!-- <div class="addwidth span4">     
+                                             <label class="coltext_image" for="coltext_image2">
+                                                  <input type="button" class="hide" id="coltext_image2" onclick="showColumnImagePopup('{$columnpagefirstlist[colpagelist].pagelist}','2');"/>
+                                                  {if isset($columnimages.0.column_id) and $columnimages.0.column_id neq '' and $columnimages.0.column_id eq '2'}
                                                        <img src="{$SITE_DOMAIN_IMAGES_URL}/{$logoimages}" alt="Column Text Image" title="Column Text Image"/>
                                                   {else}
                                                        <img src="{$SITE_BASEURL}/images/sample2.jpg" alt="Column Text Image" title="Column Text Image"/>
                                                   {/if}
-									</label>
-									<div class="coltext_title contentedit">     
-										Sample Title
-									</div>
-									<div class="coltext_desc contentedit">     
-										This is the test description
-									</div>
-								</div>
-								<div class="addwidth span4">     
-									<label class="coltext_image" for="coltext_image3">
-										<input type="button" class="hide" id="coltext_image3" onclick="showColumnImagePopup('{$columnpagefirstlist[colpagelist].pagelist}','3');"/>
+                                             </label>
+                                             <div class="coltext_title contentedit">     
+                                                  Sample Title
+                                             </div>
+                                             <div class="coltext_desc contentedit">     
+                                                  This is the test description
+                                             </div>
+                                        </div>
+                                        <div class="addwidth span4">     
+                                             <label class="coltext_image" for="coltext_image3">
+                                                  <input type="button" class="hide" id="coltext_image3" onclick="showColumnImagePopup('{$columnpagefirstlist[colpagelist].pagelist}','3');"/>
                                                   {if isset($columnimages.0.column_id) and $columnimages.0.column_id neq '' and $columnimages.0.column_id eq '3'}
-										     <img src="{$SITE_BASEURL}/images/sample3.jpg" alt="Column Text Image" title="Column Text Image"/>
+                                                       <img src="{$SITE_BASEURL}/images/sample3.jpg" alt="Column Text Image" title="Column Text Image"/>
                                                   {else}
                                                        <img src="{$SITE_BASEURL}/images/sample3.jpg" alt="Column Text Image" title="Column Text Image"/>
                                                   {/if}
-									</label>
-									<div class="coltext_title contentedit">     
-										Sample Title
-									</div>
-									<div class="coltext_desc contentedit">     
-										This is the test description
-									</div>
-								</div> -->
-							</div>
-						</div> 
+                                             </label>
+                                             <div class="coltext_title contentedit">     
+                                                  Sample Title
+                                             </div>
+                                             <div class="coltext_desc contentedit">     
+                                                  This is the test description
+                                             </div>
+                                        </div> -->
+                                   </div>
+                              </div> 
                          </li>
                          {/if}
                          {sectionelse}

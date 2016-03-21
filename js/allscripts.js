@@ -980,6 +980,10 @@ $(function(){
 						var name = "column_image_show";
 						updatePageListing(domain_id, page_id, name, "column_image_show");
 					}
+					if (drop_content_id == 'box17') {
+						var name = "team_with_text";
+						updatePageListing(domain_id, page_id, name, "team_with_text");
+					}
 				}
 				$('#droppable_content li').click(function(e) {
 					$(this).closest('li').droppable("destroy");

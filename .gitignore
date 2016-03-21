@@ -1,7 +1,5 @@
-admincp/*
+admincp/templates_c/*
 uploads/*
 resources/*
 includes/resources/*
-includes/dbDetails.php
-includes/setup.php
-theme/default/templates_c/*
+theme/default/templates_c/**

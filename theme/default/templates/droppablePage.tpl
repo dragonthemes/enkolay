@@ -1625,9 +1625,10 @@ Form Entries
                               </div>
                          </li>
                          {/if}
-						 
+						
 					 {if $pagefirstlist[pagelist].column_image_show}
-                          {assign var="columnimages" value=$objCommon->getColumnTextImages($smarty.session.page_id)}
+                          {assign var="columnimages" value=$objCommon->getColumnTextImages($pagefirstlist[pagelist].pagelist)}
+
                          <li id="page_{$pagefirstlist[pagelist].pagelist}" class="columnlist">                                                                 
                               <div class="form_element_control">
                                    <div class="controlMidOuter">

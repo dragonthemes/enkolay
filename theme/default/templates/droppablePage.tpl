@@ -1663,18 +1663,18 @@ Form Entries
 
                                              <div class="addwidth span4">     
      									<label class="coltext_image" for="coltext_image{$smarty.section.foo.rownum}">
-     										<input type="button" class="hide" id="coltext_image{$smarty.section.foo.rownum}" onclick="showColumnImagePopup('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');"/>
+     										<input type="button" class="hide" id="coltext_image_{$pagefirstlist[pagelist].pagelist}_{$smarty.section.foo.rownum}" onclick="showColumnImagePopup('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');"/>
 
                                                         {if isset($images) and $images eq 1}
-                                                            <img src="{$SITE_DOMAIN_IMAGES_URL}/{$columnimages.$srcIndex.image_name}" alt="Column Text Image" />
+                                                            <img onclick="showColumnImagePopup('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');" src="{$SITE_DOMAIN_IMAGES_URL}/{$columnimages.$srcIndex.image_name}" alt="Column Text Image" />
                                                             {assign var="images" value=0}
                                                        {else}
-                                                            <img src="{$SITE_BASEURL}/images/sample1.jpg" alt="Column Text Image" />
+                                                            <img onclick="showColumnImagePopup('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');" src="{$SITE_BASEURL}/images/sample1.jpg" alt="Column Text Image" />
                                                        {/if}
 
      									</label>
 
-     									<div class="coltext_title contentedit" id="coltext_title_{$smarty.section.foo.rownum}" onblur="updateTilte_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
+     									<div class="coltext_title contentedit" id="coltext_title_{$pagefirstlist[pagelist].pagelist}_{$smarty.section.foo.rownum}" onblur="updateTilte_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
      										{if isset($images_title) and $images_title eq 1}
                                                             {$columnimages.$srcIndex_title.column_text_title}
                                                             {assign var="images_title" value=0}
@@ -1682,7 +1682,7 @@ Form Entries
                                                             Sample Title
                                                        {/if}
      									</div>
-     									<div class="coltext_desc contentedit" id="coltext_desc_{$smarty.section.foo.rownum}" onblur="updateDesc_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
+     									<div class="coltext_desc contentedit" id="coltext_desc_{$pagefirstlist[pagelist].pagelist}_{$smarty.section.foo.rownum}" onblur="updateDesc_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
      										{if isset($images_desc) and $images_desc eq 1}
                                                             {$columnimages.$srcIndex_desc.column_text_desc}
                                                             {assign var="images_desc" value=0}
@@ -1741,18 +1741,18 @@ Form Entries
 
                                              <div class="addwidth span4">     
                                                   <label class="coltext_image_position" for="coltext_image{$smarty.section.foo.rownum}">
-                                                       <input type="button" class="hide" id="coltext_image{$smarty.section.foo.rownum}" onclick="showColumnImagePopup('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');"/>
+                                                       <input type="button" class="hide" id="coltext_image_{$pagefirstlist[pagelist].pagelist}_{$smarty.section.foo.rownum}" onclick="showColumnImagePopup('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');"/>
 
                                                         {if isset($images) and $images eq 1}
-                                                            <img src="{$SITE_DOMAIN_IMAGES_URL}/{$columnimages.$srcIndex.image_name}" class="staff-image img-circle" alt="Column Text Image" />
+                                                            <img onclick="showColumnImagePopup('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');" src="{$SITE_DOMAIN_IMAGES_URL}/{$columnimages.$srcIndex.image_name}" class="staff-image img-circle" alt="Column Text Image" />
                                                             {assign var="images" value=0}
                                                        {else}
-                                                            <img src="{$SITE_BASEURL}/images/team.gif" class="staff-image img-circle" alt="Column Text Image" />
+                                                            <img onclick="showColumnImagePopup('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');" src="{$SITE_BASEURL}/images/team.gif" class="staff-image img-circle" alt="Column Text Image" />
                                                        {/if}
 
                                                   </label>
 
-                                                  <div class="coltext_title contentedit" id="coltext_title_{$smarty.section.foo.rownum}" onblur="updateTilte_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
+                                                  <div class="coltext_title contentedit" id="coltext_title_{$pagefirstlist[pagelist].pagelist}_{$smarty.section.foo.rownum}" onblur="updateTilte_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
                                                        {if isset($images_title) and $images_title eq 1}
                                                             {$columnimages.$srcIndex_title.column_text_title}
                                                             {assign var="images_title" value=0}
@@ -1760,7 +1760,7 @@ Form Entries
                                                             Name
                                                        {/if}
                                                   </div>
-                                                  <div class="coltext_position contentedit" id="coltext_position_{$smarty.section.foo.rownum}" onblur="updatePosition_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
+                                                  <div class="coltext_position contentedit" id="coltext_position_{$pagefirstlist[pagelist].pagelist}_{$smarty.section.foo.rownum}" onblur="updatePosition_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
                                                        {if isset($images_position) and $images_position eq 1}
                                                             {$columnimages.$srcIndex_position.column_text_position}
                                                             {assign var="images_position" value=0}
@@ -1768,7 +1768,7 @@ Form Entries
                                                             Staff's position
                                                        {/if}
                                                   </div>
-                                                  <div class="coltext_desc contentedit" id="coltext_desc_{$smarty.section.foo.rownum}" onblur="updateDesc_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
+                                                  <div class="coltext_desc contentedit" id="coltext_desc_{$pagefirstlist[pagelist].pagelist}_{$smarty.section.foo.rownum}" onblur="updateDesc_columnImage('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');">     
                                                        {if isset($images_desc) and $images_desc eq 1}
                                                             {$columnimages.$srcIndex_desc.column_text_desc}
                                                             {assign var="images_desc" value=0}

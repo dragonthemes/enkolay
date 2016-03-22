@@ -6420,7 +6420,7 @@ function showColumnImagePopup(page_list_id,column_id)
 function updateTilte_columnImage(page_list_id,column_id)
 {			        
     
- 	var textval   = $('#coltext_title_'+column_id).html();
+ 	var textval   = $('#coltext_title_'+page_list_id+'_'+column_id).html();
 	var title     = textval; 
 	var domain_id = $('#domain_id').val();
 	var page_id   = $('#page_id').val();
@@ -6435,7 +6435,7 @@ function updateTilte_columnImage(page_list_id,column_id)
 function updateDesc_columnImage(page_list_id,column_id)
 {			        
     
- 	var textval   = $('#coltext_desc_'+column_id).html();
+ 	var textval   = $('#coltext_desc_'+page_list_id+'_'+column_id).html();
 	var description     = textval; 
 	var domain_id = $('#domain_id').val();
 	var page_id   = $('#page_id').val();
@@ -6448,11 +6448,10 @@ function updateDesc_columnImage(page_list_id,column_id)
 function updatePosition_columnImage(page_list_id,column_id)
 {			        
     
- 	var textval   = $('#coltext_position_'+column_id).html();
+ 	var textval   = $('#coltext_position_'+page_list_id+'_'+column_id).html();
 	var position     = textval; 
 	var domain_id = $('#domain_id').val();
 	var page_id   = $('#page_id').val();
-	var column_id = column_id;
 
 	$.post(jssitebaseUrl+'/ajaxFile.php',{'domain_id':domain_id,'page_id':page_id,'page_list_id':page_list_id,'position':position,'column_id':column_id,'action':'updatePosition_columnImage'}, function(output){
 		

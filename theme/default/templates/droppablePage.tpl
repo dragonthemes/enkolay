@@ -1740,7 +1740,7 @@ Form Entries
                                              {/foreach}
 
                                              <div class="addwidth span4">     
-                                                  <label class="coltext_image" for="coltext_image{$smarty.section.foo.rownum}">
+                                                  <label class="coltext_image_position" for="coltext_image{$smarty.section.foo.rownum}">
                                                        <input type="button" class="hide" id="coltext_image{$smarty.section.foo.rownum}" onclick="showColumnImagePopup('{$pagefirstlist[pagelist].pagelist}','{$smarty.section.foo.rownum}');"/>
 
                                                         {if isset($images) and $images eq 1}

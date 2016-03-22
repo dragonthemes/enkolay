@@ -1747,7 +1747,7 @@ Form Entries
                                                             <img src="{$SITE_DOMAIN_IMAGES_URL}/{$columnimages.$srcIndex.image_name}" class="staff-image img-circle" alt="Column Text Image" />
                                                             {assign var="images" value=0}
                                                        {else}
-                                                            <img src="{$SITE_BASEURL}/images/sample1.jpg" class="staff-image img-circle" alt="Column Text Image" />
+                                                            <img src="{$SITE_BASEURL}/images/team.gif" class="staff-image img-circle" alt="Column Text Image" />
                                                        {/if}
 
                                                   </label>

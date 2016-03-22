@@ -1498,12 +1498,12 @@ box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);z-index: 99;-webkit-box-sizing: borde
 .coltext_image img{float:left; width:100%; margin:0; height:180px;}
 .coltext_title{float:left; width:100%; margin:0 0 10px; font-size:17px; text-transform:uppercase;font-weight:bold;}
 .coltext_desc{float:left; width:100%; margin:0; font-size:13px;}
+.coltext_position{ width:100%; margin:0 0 10px; font-size:15px;}
 .buildImgTxt{max-width:calc(100% - 15px);}
 /*.uploadImgBg img{width:270px;}*/
 .heightauto{ height:auto!important;}
 .img-circle {
-    border-radius: 50%;
-    clip-path: circle(60px at center);
+    border-radius: 500px;
 
 }
 .columnlist-position {

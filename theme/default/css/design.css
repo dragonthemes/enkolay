@@ -1509,7 +1509,13 @@ box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);z-index: 99;-webkit-box-sizing: borde
 .columnlist-position {
     text-align: center;
 }
-.coltext_image_position img{width:70%; margin:0; height:70%;}
+.coltext_image_position img{
+    width:70%; 
+    margin:0; 
+    height:70%;
+    max-height: 220px;
+    margin-left: 38px;
+}
 
 #droppable_content li .coltext_position{
         margin-top: 30px;

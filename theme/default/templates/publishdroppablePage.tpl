@@ -409,10 +409,10 @@
 			</div>
             {/if}           
             {/if}  
-
+  
             {if $pagefirstlist[pagelist].column_image_show}
-              {assign var="columnimages" value=$objCommon->getColumnTextImages($pagefirstlist[pagelist].page_id)}
-             <div id="page_{$pagefirstlist[pagelist].pagelist}" class="columnlist">                                                                 
+              {assign var="columnimages" value=$objCommon->getColumnTextImages($pagefirstlist[pagelist].pagelist)}
+             <div id="daksjdla page_{$pagefirstlist[pagelist].pagelist}" class="columnlist">                                                                 
                   
 			 <div class="tablesampleouter">
 				 <div class="sample2  columsBor row-fluid no-space">
@@ -475,7 +475,82 @@
              </div>
               <div class="space"></div>
 			<div class="clearfix"></div>
-             {/if}                                             
+             {/if}   
+
+             {if $pagefirstlist[pagelist].team_with_text}
+              {assign var="columnimages" value=$objCommon->getColumnTextImages($pagefirstlist[pagelist].pagelist)}
+             <div id="daksjdla page_{$pagefirstlist[pagelist].pagelist}" class="columnlist columnlist-position">                                                                 
+                  
+			 <div class="tablesampleouter">
+				 <div class="sample2  columsBor row-fluid no-space">
+                    {section name=foo start=0 loop=3 step=1} 
+                         {assign var="num" value=$smarty.section.foo.rownum}
+
+                         {foreach from=$columnimages key=k item=imge}
+
+                              {if $imge.column_id eq $num and $imge.status eq 'columnImageText'}
+                                   {assign var="srcIndex" value=$k}
+                                   {assign var="images" value=1}
+                              {/if}
+
+                              {if $imge.column_id eq $num and $imge.status eq 'columnImageText_title'}
+                                   {assign var="srcIndex_title" value=$k}
+                                   {assign var="images_title" value=1}
+                              {/if}
+
+                               {if $imge.column_id eq $num and $imge.status eq 'columnImageText_desc'}
+                                   {assign var="srcIndex_desc" value=$k}
+                                   {assign var="images_desc" value=1}
+                              {/if}
+                         {/foreach}
+
+                         <div class="addwidth span4">      
+						<div class="coltext_image coltext_image_position" for="coltext_image{$smarty.section.foo.rownum}">
+							
+                                {if isset($images) and $images eq 1}
+                                    <img class="staff-image img-circle" src="{$SITE_DOMAIN_IMAGES_URL}/{$columnimages.$srcIndex.image_name}" alt="Column Text Image" />
+                                    {assign var="images" value=0}
+                               {else}
+                                    <img class="staff-image img-circle"  src="{$SITE_BASEURL}/images/team.gif" alt="Column Text Image" />
+                               {/if}
+
+						</div>
+
+						<div class="coltext_title contentedit" id="coltext_title_{$smarty.section.foo.rownum}" >     
+							{if isset($images_title) and $images_title eq 1}
+                                        {$columnimages.$srcIndex_title.column_text_title}
+                                        {assign var="images_title" value=0}
+                                   {else}
+                                        Name
+                                   {/if}
+						</div>
+						<div class="coltext_position contentedit">     
+							{if isset($images_position) and $images_position eq 1}
+							    {$columnimages.$srcIndex_position.column_text_position}
+							    {assign var="images_position" value=0}
+							{else}
+							    Staff's position
+							{/if}
+						</div>
+						<div class="coltext_desc contentedit" id="coltext_desc_{$smarty.section.foo.rownum}" >     
+							{if isset($images_desc) and $images_desc eq 1}
+                                        {$columnimages.$srcIndex_desc.column_text_desc}
+                                        {assign var="images_desc" value=0}
+                                   {else}
+                                        Introduction about staff
+                                   {/if}
+						</div>
+					</div>
+                         
+                    {/section} 
+
+					
+				</div>
+			</div> 
+             </div>
+              <div class="space"></div>
+			<div class="clearfix"></div>
+             {/if}                                            
 			{/section}
 			<div class="blogPageThemeBgBottimage"></div>
 		<!--site  and blog content end-->

@@ -984,6 +984,10 @@ $(function(){
 						var name = "team_with_text";
 						updatePageListing(domain_id, page_id, name, "team_with_text");
 					}
+					if (drop_content_id == 'box18') {
+						var name = "page_header";
+						updatePageListing(domain_id, page_id, name, "page_header");
+					}
 				}
 				$('#droppable_content li').click(function(e) {
 					$(this).closest('li').droppable("destroy");

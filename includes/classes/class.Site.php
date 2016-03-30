@@ -29,9 +29,9 @@ class Site{
 	#........................................................................................
 	#DB CONNECTION
 	function db_connection($db_host,$db_name,$db_user,$db_pwd){
-			
+
 		$con = mysql_connect($db_host,$db_user,$db_pwd) or die("Could not connect: ".$db_host." :: ".$db_name." :: ".$db_user." :: ".$db_pwd. $this->mysql_error());
-		mysql_select_db($db_name,$con) or die ('Can\'t use  : '.$db_name . $this->mysql_error($con));	
+		mysql_select_db($db_name,$con) or die ('Can\'t use  : '.$db_name . $this->mysql_error($con));
         $this->DBCONN = $con;
         
 	}

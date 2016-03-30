@@ -25,7 +25,7 @@ class Cron{
         {	
             global $CFG;
     		$con = mysql_connect($db_host,$db_user,$db_pwd,$db_name);
-            mysql_select_db($db_name, $con);                   
+            mysql_select_db($db_name, $con);
             
             $SelQuery  = "SELECT  admin_name, admin_email, sitename,sitelogo  FROM hi_sitesetting WHERE id  = '1'";
 		    $sitesetting = $this->ExecuteQuery($SelQuery,'select');  
